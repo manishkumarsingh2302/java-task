@@ -1,0 +1,93 @@
+                                                 ASSIGNMENT 1
+                           ============================================================
+  
+
+Q1. Write a Java program to convert a given integer (in seconds) to hours, minutes
+and seconds.
+Test Data :
+Input seconds: 25300
+
+             class Time{ 
+        public static void main(String[]args){
+        int H;
+        int M;
+        int S;
+        int S1;
+
+      S1=25300;
+      H=25300/3600;
+      M=25300%3600/60;
+      S=S1%60;
+
+ System.out.println("hours : " +H);
+ System.out.println("Mintue: " +M);
+ System.out.println("swcond : " +S);
+}
+}
+
+
+======================================================================================
+Q2. Write a java program to convert a given integer (in days) to years, months and
+days,assumes that all months have 30 days and all years have 365 days. Test Data :
+Input no. of days: 2535
+
+
+      class Day{
+      public static void main(Strings[]args){
+      int Y;
+      int M;
+      int D; 
+      int D1;
+
+    D1=2535;
+    Y=2535/365;
+    M=2535%365/30;
+    D=D1%30;
+
+ System.out.println("year : " +Y);
+ System.out.println("month : " +M);
+ System.out.println("day : " +D);
+}
+}
+================================================================================================
+Q10. Write a java program that converts kilometers per hour to miles per hour
+Expected Output :
+Input kilometers per hour: 15
+9.320568 miles per hour
+
+                    import java.util.Scanner;
+          class Miles{
+    public static void main(String []args){
+    Scanner s=new Scanner(System.in);
+    float hour,miles;
+
+   System.out.println("enter hour : ");
+   hour=s.nextFloat();
+
+  miles=hour*0.6213712f;
+ System.out.println("total miles: " +miles);
+}
+}
+
+  ===================================================================================
+Q12. Write a java program that takes hours and minutes as input, and calculates the total
+number of minutes
+
+     import java.util.Scanner;
+class CalMin{
+        public static void main(String args[]){
+        Scanner obj=new Scanner(System.in);
+         int hour, min , total;
+
+       System.out.println("Enter Hour :  ");
+       hour=obj.nextInt();
+
+    System.out.println("Enter Minuts :  ");
+    min=obj.nextInt();
+
+    total=(hour*60)+min;
+    System.out.println("Total Minuts :  "+total);
+
+   }
+}  
+==============================================================================================         
