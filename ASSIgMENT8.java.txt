@@ -1,0 +1,224 @@
+//Q1. Write a program to check if the letter &#39;e&#39; is present in
+the word &#39;Umbrella&#39;.
+
+Enter Any String: Umbrella
+e is Present in the word :YES
+====================================================================================================
+       import java.util.HashS
+      class CheckPangram {
+
+     static boolean isPangram(String str) {
+        // Convert the string to lowercase and remove non-alphabetic characters
+        str = str.toLowerCase();
+
+        // Use a HashSet to store unique characters
+        HashSet<Character> uniqueLetters = new HashSet<>();
+
+        // Iterate through the string
+        for (char ch : str.toCharArray()) {
+            // Add alphabetic characters to the set
+            if (ch >= 'a' && ch <= 'z') {
+                uniqueLetters.add(ch);
+            }
+        }
+
+        // If the set size is 26, it is a pangram
+        return uniqueLetters.size() == 26;
+    }
+
+    public static void main(String[] args) {
+        // Example inputs
+        String input1 = "Abcdefghijklmnopqrstuvwxyz";
+        String input2 = "The quick brown fox jumps over the lazy dog";
+        String input3 = "Hello World!";
+
+        // Check if the strings are pangrams
+        System.out.println("Input: " + input1 + " -> Is Pangram? " + isPangram(input1)); // Output: Yes
+        System.out.println("Input: " + input2 + " -> Is Pangram? " + isPangram(input2)); // Output: Yes
+        System.out.println("Input: " + input3 + " -> Is Pangram? " + isPangram(input3)); // Output: No
+    }
+}
+============================================================================================================
+Q2. Write a program to check if the word &#39;orange&#39; is
+present in the &quot;This is orange juice&quot;.
+
+Enter Any String: This is orange juice
+orange is Present in the Sentence :YES
+   
+
+    import java.util.Scanner;
+
+   class CheckWordPresence {
+
+    public static void main(String[] args) {
+        // Create a Scanner object for user input
+        Scanner scanner = new Scanner(System.in);
+
+        // Input: Enter a string
+        System.out.print("Enter Any String: ");
+        String input = scanner.nextLine();
+
+        // Check if the word "orange" is present in the sentence
+        if (input.toLowerCase().contains("orange")) {
+            System.out.println("orange is Present in the Sentence : YES");
+        } else {
+            System.out.println("orange is Present in the Sentence : NO");
+        }
+
+        // Close the scanner
+        scanner.close();
+ }
+}
+====================================================================================================
+
+Q4. Write a program that takes your full name as input and
+displays the abbreviations of the first and middle names
+except the last name which is displayed as it is.
+For example, if your name is Robert Brett Roser, then the
+output should be R.B.Roser.
+Example:
+Input:
+Enter Full Name : Sanjay Kumar Jain
+Result: S.K. Jain
+   
+
+import java.util.Scanner;
+
+public class NameAbbreviation {
+    public static void main(String[] args) {
+        // Create a Scanner object for input
+        Scanner scanner = new Scanner(System.in);
+
+        // Prompt the user for full name
+        System.out.print("Enter Full Name: ");
+        String fullName = scanner.nextLine().trim();
+
+        // Split the full name into parts
+        String[] nameParts = fullName.split(" ");
+
+        // Initialize a StringBuilder to store the result
+        StringBuilder abbreviatedName = new StringBuilder();
+
+        // Process all parts of the name except the last one
+        for (int i = 0; i < nameParts.length - 1; i++) {
+            // Append the first character of the part followed by a period
+            abbreviatedName.append(nameParts[i].charAt(0)).append(".");
+        }
+
+        // Append the last name as it is
+        abbreviatedName.append(nameParts[nameParts.length - 1]);
+
+        // Print the result
+        System.out.println("Result: " + abbreviatedName);
+
+        // Close the scanner
+        scanner.close();
+    }
+}
+=========================================================================================
+6. Write a program to delete all consonents from the
+string &quot;Hello, have a good day&quot;.
+Example:
+Input : Hello
+Output: eo
+Example:
+Input: Hello, have a good day
+Output: eo, ae a oo
+
+ class RemoveConsonants {
+    public static void main(String[] args) {
+        // Input string
+        String input = "Hello, have a good day";
+
+        // Call the method to remove consonants
+        String result = removeConsonants(input);
+
+        // Print the result
+        System.out.println("Input: " + input);
+        System.out.println("Output: " + result);
+    }
+
+    // Method to remove consonants from a string
+    public static String removeConsonants(String str) {
+        // Define vowels
+        String vowels = "AEIOUaeiou";
+
+        // Use StringBuilder for efficient string manipulation
+        StringBuilder result = new StringBuilder();
+
+        // Iterate through each character in the string
+        for (char c : str.toCharArray()) {
+            // Add to result if it is a vowel or not a letter
+            if (vowels.indexOf(c) != -1 || !Character.isLetter(c)) {
+                result.append(c);
+            }
+        }
+
+        // Return the result as a string
+        return result.toString();
+    }
+}
+
+==========================================================================================
+//Q12. How to remove all white spaces from
+a String in Java?
+Given a string with white spaces, the task is to remove all white
+spaces from a string using without built-in methods. 
+Examples:
+Input: str = &quot; A Computer Science Portal&quot;
+Output: AComputerSciencePortal
+  
+
+public class RemoveWhiteSpaces {
+    public static void main(String[] args) {
+        // Input string
+        String input = " A Computer Science Portal";
+
+        // Call the method to remove white spaces
+        String result = removeWhiteSpaces(input);
+
+        // Print the result
+        System.out.println("Input: " + input);
+        System.out.println("Output: " + result);
+    }
+
+    // Method to remove white spaces from a string
+    public static String removeWhiteSpaces(String str) {
+        // Use a StringBuilder to build the result without white spaces
+        StringBuilder result = new StringBuilder();
+
+        // Iterate through each character in the string
+        for (char c : str.toCharArray()) {
+            // Append the character if it is not a white space
+            if (!Character.isWhitespace(c)) {
+                result.append(c);
+            }
+        }
+
+        // Return the result as a string
+        return result.toString();
+    }
+}
+========================================================================================
+Q13. Remove all the Digits from String in Java
+Given  alphanumeric string  str, the task is to write a Java program to remove all
+the digit from this string and prints the modified string.
+Examples: 
+Input: str = “12Java”
+Output: Java
+Explanation: The given string contains digits 1 and 2. We remove all
+the digit and prints the modified string.
+     
+  public class RemoveDigits {
+    public static void main(String[] args) {
+        // Input string with digits
+        String str = "12Java";
+
+        // Remove digits using regular expression
+        String modifiedStr = str.replaceAll("[0-9]", "");
+
+        // Print the modified string
+        System.out.println(modifiedStr);
+    }
+}
+
