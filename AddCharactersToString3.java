@@ -7,7 +7,7 @@ Output:
 --&gt; If in beginning, Output: RamHello
 --&gt; If at sat 3rd index, Output: HelRamlo
 ====================================import java.util.Scanner;
- class AddCharactersToString {
+ class AddCharactersToString3 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
