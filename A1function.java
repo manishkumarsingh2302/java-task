@@ -13,12 +13,12 @@ class A1function{
      System.out.println("enter no 1 : ");
     int n1=sk.nextInt();
 
-  System.out.println("enter no 2 :");
+  System.out.println("enter no 2 :");  
   int n2=sk.nextInt();
   A1function obj=new A1function();
 
    obj.add(n1,n2);
-   }
+    }
 }
 
     
